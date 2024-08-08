@@ -1,0 +1,158 @@
+<html>
+    <head><title>Mobiles</title>
+    
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+            
+            body{
+                background-color: black;
+                font-family: poppins;
+            }
+                    
+            .navbar{
+               border-radius: 80px;
+               padding:10px;
+               margin-left: 20px;
+               margin-right: 20px;
+               margin-bottom:80px;
+           }
+    
+           .navbar ul {
+               text-align: right;
+               color: white;
+               text-decoration: none;
+               list-style: none;
+               margin:20px;
+               margin-top: 40px;
+               margin-bottom:40px;
+       
+           }
+    
+           .navbar li {
+               margin: 20px;
+               display: inline;
+           }
+    
+           .navbar li a:hover {
+               color:aqua;
+               border-bottom:red solid 4px;
+           }
+    
+           .navbar li a {
+               color:white;
+               text-decoration: none;
+               font-size: 20px;
+               font-weight: bold;
+           }
+    
+           .logo {
+               height: 320px;
+               width: 380px;
+               border-radius: 50%;
+               margin-bottom: 20px;
+               margin-right: -300px;
+               margin-left: -80px;
+               margin-top: -30px;
+           }
+    
+           .list{
+                width:1722px;
+                float:left;
+                background-color:white;
+            }
+    
+            .item{
+                height:300px;
+                font-size:25px;
+                color:F7F4EA;
+                margin-left: 80px;
+            }
+    
+            .phone{
+                width:150px;
+                height:280px;
+                float:right;
+                margin-right:140px;
+                border-radius: 20px;
+            }
+    
+    
+            .list h4{
+                color:black;
+            }
+    
+            .list p{
+                font-size:23px;
+                color: black;
+            }
+    
+            .list a{
+                
+                color:blue;
+            }
+    
+            .list a:hover {
+                color:purple;
+                border-bottom:red solid 4px;
+            }
+    
+            .list ol li{
+                color:black;
+            }
+    
+            .heading h1{
+                color:white;
+                text-align: center;
+                margin-top: 20px;   
+                padding:20px;      
+                font-size: 35px; 
+            }
+    
+    
+                 </style>
+    </head>
+        <body>
+          
+
+         <header>
+            <nav class="navbar">
+                <img src="/static/3logo.png" class="logo" align="left">
+    
+                <ul>
+                        <li><a href="/home">Home</a></li>
+                        <li><a href="/Laptop/">Laptops</a></li>
+                        <li><a href="/Television/">Televisions</a></li>
+                        <li><a href="/cart_display">Cart</a></li>
+                        <li><a href="/feed">Feedback</a></li>
+                        <li><a href="/c_update">My Profile</a></li>                   
+                        <li><a href="/">Logout</a></li>
+                    
+                </ul>
+            </nav>
+        </header>
+
+        
+        <nav class="heading">
+            <h1>Mobiles</h1>
+        </nav>
+
+
+            <div class="list">
+
+            <ol>
+            <hr>
+            {% for r in rec %}
+            <br>
+            <li class="item"><img class="phone" src="/image/{{r.3}}">
+            <b><a href="/Mobile/{{r.0}}" target="_blank">{{r.1}}</a></b>
+            <p>{{r.4}}</p>
+            <h4>Price: ₹{{r.2}} </h4>
+            </li>
+            <hr>
+            {% endfor %}
+            
+            </ol>
+
+            </div>
+        </body>
+</html>

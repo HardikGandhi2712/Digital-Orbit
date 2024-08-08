@@ -1,0 +1,42 @@
+<html>
+<head>
+  <title>{{rec.1}}</title>
+  <link href="/static/styles.css" rel="stylesheet">
+</head>
+<body>
+  <center>
+    <h3>{{rec.1}}</h3>
+  </center>
+  <div class="desc">
+    <img src="/image/{{rec.6}}">
+    <img src="/image/{{rec.8}}">
+    <p>
+    <ul>
+      {% for point in rec.3|split:". " %}
+      <li>{{ point }}</li>
+      {% endfor %}
+    </ul>
+    </p>
+  </div>
+  <hr width="850px" color="black" align="right">
+  <div class="buy">
+    <h4 style="margin-right:10px;">Price: ₹{{rec.4}}</h4>
+    <br>
+    <h4>
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <button type="submit" value="{{rec.0}}" name="btn"
+          style="height:45px;width:130px;font-size: 18px;font-style: italic;background-color:red;border-radius: 20px;color: aliceblue;">Add
+          to cart</button>
+      </form> <br>
+    </h4>
+  </div>
+  <script type="text/javascript">
+    var msgvalue = "{{ msg }}";
+    if (msgvalue != "") {
+      alert(msgvalue);
+    }
+  </script>
+</body>
+
+</html>

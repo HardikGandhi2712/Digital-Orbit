@@ -1,0 +1,196 @@
+<html>
+
+<head> <title>Home</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+    body {
+        background-color: black;
+        background-image: url("/static/cover3.jpg");
+        background-repeat: no-repeat;
+        background-size:contain;
+        font-family: poppins;
+    }
+
+    .navbar {
+        border-radius: 80px;
+        padding: 10px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .navbar ul {
+        text-align: right;
+        color: white;
+        text-decoration: none;
+        list-style: none;
+        margin: 20px;
+
+    }
+
+    .navbar li {
+        margin: 20px;
+        display: inline;
+
+    }
+
+    .navbar li a:hover {
+        color: aqua;
+        border-bottom: red solid 4px;
+    }
+
+    .navbar li a {
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bold;
+
+    }
+
+    .logo {
+        height: 340px;
+        width: 400px;
+        border-radius: 50%;
+        margin-left: -90px;
+        margin-top: -30px;
+    }
+
+
+    .images {
+        display: flex;
+        justify-content: center;
+        margin-top: 100px;
+
+    }
+
+    .images a:hover {
+        border: 5px solid red;
+        border-radius: 5px;
+
+    }
+
+    .images a {
+        display: flex;
+        flex-direction: column;
+        margin-right: 140px;
+        margin-left: 80px;
+
+    }
+
+    .label {
+        color: white;
+        text-align: center;
+        font-size: 25px;
+        text-decoration: none;
+    }
+
+    h2 {
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        font-size: 50px;
+        text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    }
+
+
+    .container{
+        display:flex;
+    }
+
+    .container h2 {
+        width: 100%;
+        border-bottom: 0.5px solid #ddd;
+    }
+
+    .container .box {  
+        height:200px;
+        width: 400px;
+        padding: 45px;
+        text-align: center;
+        margin: 30px;
+        margin-left:50px;
+        margin-bottom:120px;
+
+    }
+
+    .bg-primary {
+        background: #265ede;
+        color: #fff;
+    }
+
+    .light-gray {
+        background: #ddd;
+    }
+
+
+    #main-footer{
+        background: #265ede;
+        padding: 20px;
+        margin-top: 20px;
+        text-align: center;
+        color:#fff;
+    }
+
+</style>
+</head>
+<body>
+   
+    <header>
+        <nav class="navbar">
+            <img src="/static/3logo.png" class="logo" align="left">
+
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/Mobile">Mobiles</a></li>
+                <li><a href="/Laptop">Laptops</a></li>
+                <li><a href="/Television">Televisions</a></li>
+                <li><a href="/cart_display">Cart</a></li>
+                <li><a href="/feed">Feedback</a></li>
+                <li><a href="/c_update">My Profile</a></li>
+                <li><a href="/">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br>
+
+    <h2 id="products" style="margin-top: 1000px;">What You Can Find Here</h2>
+
+    <div class="images">
+        <a href="/Mobile/"><img src="/static/mobiles.jpg" height="200px">
+            <h4 class="label">Mobiles</h4>
+        </a>
+        <a href="/Laptop/"> <img src="/static/pc.avif" height="200px">
+            <h4 class="label">Laptops</h4>
+        </a>
+        <a href="/Television/"> <img src="/static/television.jpg" height="200px" width="320px">
+            <h4 class="label">Televisions</h4>
+        </a>
+    </div>
+    <br><br><br><br><br><br>
+
+
+    <hr width="1000px">
+
+    <h2 style="margin-top:100px">About Our Company</h2>
+    <p style="color:white;margin-left:400px;margin-right:400px;font-size:20px;margin-bottom:90px;line-height: 35px;">
+        Digital Orbit is a one stop location for all your electronic needs.
+        It deals with various types of electronic gadgets such as smartphones, laptops and televisions.
+        It has all the latest models available for all electronic gadgets . Here, we have products at all
+        budgets and specifications .
+        Our festive sales are something, that our customers look up to. Our topmost priority is customer care and service.</p>
+
+
+
+    <hr width="1000px">
+        <br><br><br><br>
+    <footer id="main-footer">
+          
+        <p>
+        &copy; 2024. Digital Orbit. All rights reserved.
+        </p>
+
+  </footer>
+
+</body>
+
+</html>

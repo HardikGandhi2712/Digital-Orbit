@@ -1,0 +1,203 @@
+<html>
+<head>
+    <title>Delete Product</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        body {
+            background-color: #1a1a1a;
+            font-family: poppins;
+        }
+
+        .navbar {
+            border-radius: 80px;
+            padding: 10px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 80px;
+        }
+
+        .navbar ul {
+            text-align: right;
+            color: white;
+            text-decoration: none;
+            list-style: none;
+            margin: 20px;
+            margin-top: 0px;
+
+        }
+
+        .navbar li {
+            margin: 20px;
+            display: inline;
+        }
+
+        .navbar li a:hover {
+            color: aqua;
+            border-bottom: red solid 4px;
+        }
+
+        .navbar li a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+
+        .navbar li a:hover {
+            color: #00ffff;
+        }
+
+        .logo {
+            height: 320px;
+            width:400px;
+            border-radius: 50%;
+            margin-right: 20px;
+            display: flex;
+            margin-left: -80px;
+            margin-bottom: -220px;
+        }
+
+        .main-content {
+            background-color: #fff;
+            border-radius: 20px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 32px;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        input[type="number"],
+        input[type="submit"] {
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="number"]:focus,
+        input[type="submit"]:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        input[type="submit"]:hover{
+            background-color: #007bff;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        img.product-image {
+            max-width: 150px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .btn {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn a {
+            text-decoration: none;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn a:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            .navbar ul li a {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="container">
+            <img src="/static/3logo.png" alt="Logo" class="logo">
+            <ul>
+                <li><a href="/adminpage">Home</a></li>
+                <li><a href="/">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<div class="container main-content">
+    <h1>Delete Record</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="pid">Enter Product ID:</label>
+        <input type="number" id="pid" name="pid">
+        <br>
+        <input type="submit" value="Delete Record" name="Submit">
+
+    <table>
+        <tr>
+            <th>Photos</th>
+            <th>Description</th>
+        </tr>
+        {% for r in rec %}
+        <tr>
+            <td><img src="/image/{{r.photo1}}" alt="Product Image" class="product-image"></td>
+            <td>
+                <b>Product Name:</b> {{r.pname}} <br>
+                <b>Product ID:</b> {{r.pid}} <br>
+                <b>Long Description:</b> {{r.Ldescription}} <br>
+                <b>Short Description:</b> {{r.Sdescription}} <br>
+                <b>Category:</b> {{r.category}} <br>
+                <b>Price:</b> ₹{{r.price}}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <div class="btn">
+        <a href="/adminpage">Go Back</a>
+    </div>
+</div>
+</body>
+</form>
+<script>
+    var msgvalue = "{{ msg1.msg1 }}";
+    if (msgvalue !== "") {
+        alert(msgvalue);
+    }
+</script>
+
+</body>
+</html>

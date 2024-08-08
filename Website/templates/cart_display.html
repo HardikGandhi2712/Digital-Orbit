@@ -1,0 +1,193 @@
+<html>
+<head>
+    <title>Shopping Cart</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+        body {
+            background-color: #1f1f1f;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+        }
+
+        header {
+            background-color: #000;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .navbar {
+            border-radius: 80px;
+            padding: 10px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 80px;
+        }
+
+        .navbar ul {
+            text-align: right;
+            color: white;
+            text-decoration: none;
+            list-style: none;
+            margin: 20px;
+            margin-top: 40px;
+
+        }
+
+        .navbar li {
+            margin: 20px;
+            display: inline;
+        }
+
+        .navbar li a:hover {
+            color: aqua;
+            border-bottom: red solid 4px;
+        }
+
+        .navbar li a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .list {
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar img {
+            height: 300px;
+            width:380px;
+            display:flex;
+            margin-top: -40px;
+            margin-left: -80px;
+            margin-bottom: -80px;
+
+        }
+
+        h1.name {
+            color: #fff;
+            text-align: center;
+            font-size: 36px;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 2px solid #fff;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        .down {
+            background-color: #333;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #fff;
+            text-align: center;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+
+        button {
+            padding: 10px 20px;
+            background-color: #00bfff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 15px;
+            margin: 5px;
+        }
+
+        button:hover {
+            background-color: #0077b6;
+        }
+
+        #buynow {
+            background-color: #0077b6;
+            text-decoration: none;
+        }
+
+        #buynow:hover {
+            background-color: #005d8a;
+        }
+
+        .delete-btn {
+            background-color: #ff4d4d;
+            margin-top: 20px;
+        }
+
+        .delete-btn:hover {
+            background-color: #cc0000;
+        }
+
+
+    </style>
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="/static/3logo.png" class="logo" alt="Logo" align="left">
+        </div>
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/Mobile">Mobiles</a></li>
+            <li><a href="/Laptop">Laptops</a></li>
+            <li><a href="/Television">Televisions</a></li>
+            <li><a href="/feed">Feedback</a></li>
+            <li><a href="/c_update">My Profile</a></li>
+            <li><a href="/">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+
+<h1 class="name">CART</h1>
+
+<div class="down">
+    <table>
+        <tr>
+            <th>Product Id</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Options</th>
+        </tr>
+        {% for r in rec %}
+        <tr>
+            <td>{{r.pid}}</td>
+            <td>{{r.pname}}</td>
+            <td>₹{{r.price}}</td>
+            <td>
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <button type="submit" value="{{r.cart_id}}" name="btn" class="delete-btn">Delete from cart</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Total Amount: ₹{{a}}</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <center><button type="submit" name="buy" id="buynow"><a href="/bill1" target="_blank" style="color:white;text-decoration: none;">Buy Now</a></button></center>
+    </form>
+</div>
+</body>
+</html>

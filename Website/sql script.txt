@@ -1,0 +1,3 @@
+sql script
+
+create table website_contactus(id int(200) primary key auto_increment,fname varchar(50),lname varchar(50),email varchar(50),mobile varchar(20),msgtype varchar(20),message varchar(100));

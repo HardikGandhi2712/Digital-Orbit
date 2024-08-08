@@ -1,0 +1,109 @@
+<html>
+
+<head>
+    <title>Bill</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: white;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th,
+        td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #ccc;
+        }
+
+        th {
+            background-color: #eecbe4;
+        }
+
+        h2 {
+            margin: 0;
+            padding: 0;
+            line-height: 40px;
+        }
+
+        .invoice-header {
+            margin-right: 17%;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .customer-info {
+            margin-bottom: 20px;
+        }
+
+        .total-amount {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .logo {
+            height:280px;
+            width: 340px;
+            border-radius: 50%;
+            margin-left: -70px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <img src="/static/logo10.jpg" class="logo" align="left">
+    <div class="invoice-header">
+        <h2>All Tech Spec Pvt Ltd.</h2>
+        <h2>128 Park Avenue</h2>
+        <h2>West Delhi-110034</h2>
+        <h2>India</h2>
+        <h1>Sales Invoice</h1>
+    </div><br><br><br>
+
+    <div class="customer-info">
+        {% for r in a %}
+        Customer Name: {{ r.0 }} <br>
+        Customer Email Id: {{ r.1 }} <br>
+        {% endfor %}
+        Address: {{ b }} <br>
+        Payment Method: {{ c }} <br>
+        Purchase Date: {{ y.0 }} <br>
+        Purchase Time: {{ x }} <br>
+    </div>
+
+    <table>
+        <tr>
+            <th>Product Id</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </tr>
+
+        {% for p in p %}
+        <tr>
+            <td>{{ p.0 }}</td>
+            <td>{{ p.1 }}</td>
+            <td>₹{{ p.2 }}</td>
+            <td>{{ p.3 }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+    <p class="total-amount">Total Amount: ₹{{ amt }}</p>
+    <br><br>
+    <hr>
+
+    <h2 align="center">Thank you for shopping with us! Visit us again!!</h2>
+
+</body>
+
+</html>

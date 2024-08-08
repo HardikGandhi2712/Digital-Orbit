@@ -1,0 +1,210 @@
+<html>
+<head>
+    <title>Customer Registration</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+        body {
+            font-family: poppins;
+            background-color: black;
+            color: white;
+        }
+
+        header {
+            background-color: #000;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .navbar {
+            border-radius: 80px;
+            padding: 10px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 10px;
+        }
+
+        .navbar ul {
+            text-align: right;
+            color: white;
+            text-decoration: none;
+            list-style: none;
+            margin: 20px;
+            margin-top: -190px;
+
+        }
+
+        .navbar li {
+            margin: 20px;
+            display: inline;
+        }
+
+        .navbar li a:hover {
+            color: aqua;
+            border-bottom: red solid 4px;
+        }
+
+        .navbar li a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .list {
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar img {
+            height: 300px;
+            width:380px;
+            display:flex;
+            margin-top: -40px;
+            margin-left: -80px;
+
+        }
+
+        .note {
+            font-size: 14px;
+            color: white;
+        }
+
+        .submission {
+            text-align: center;
+            margin-top: 0px;
+        }
+
+        .submission a {
+            color: grey;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .submission a:hover {
+            color: violet;
+        }
+
+        h1 {
+            font-weight: normal;
+            font-size: 24px;
+            text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .register {
+            border: 1px solid white;
+            background-color: grey;
+            width: 500px;
+            height: 800px;
+            color: white;
+            border-radius: 20px;
+            background-size:cover;
+            background-position: center;
+            overflow: hidden;
+            margin-left: 550px;
+
+        }
+
+        form {
+            display: block;
+            box-sizing: border-box;
+            padding: 40px;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            backdrop-filter: brightness(40%);
+            display: flex;
+            gap: 5px;
+        }
+
+
+        label {
+            color: rgba(255, 255, 255, 0.8);
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 2px;
+            padding-left: 10px;
+        }
+
+        input {
+            background: rgba(255, 255, 255, 0.3);
+            height: 40px;
+            line-height: 40px;
+            border-radius: 20px;
+            padding: 0px 20px;
+            border: none;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <img src="/static/3logo.png" class="logo" alt="Logo">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/adminlogin/">Admin Login</a></li>
+                <li><a href="/customerlogin/">Customer Login</a></li>
+                <li><a href="/Aboutus/" target="_blank">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr>
+
+    <div class="register" style="margin-top: 50px; margin-bottom: 30px;">
+        <form method="POST">
+            {% csrf_token %}
+            <h1 style="text-align:center;">Create Account</h1>
+                <label>Enter Customer Name:</label>
+                <input type="text" id="cname" name="cname" placeholder="Enter Your Name..." required>
+
+                <label>Enter Email ID:</label>
+                <input type="text" id="email" name="email" placeholder="Enter Email ID..." required>
+
+                <label>Enter Contact Number:</label>
+                <input type="number" id="contact" name="contact" placeholder="Enter Contact Number..." required>
+
+                <label>Enter Password:</label>
+                <input type="password" id="pass1" name="pass1" placeholder="Enter Password..." required>
+
+                <label>Confirm Password:</label>
+                <input type="password" id="pass2" name="pass2" placeholder="Enter Confirm Password..." required style="margin-bottom: 0px;">
+                <p class="note">*Email ID once registered cannot be changed!</p>
+            <input type="submit" value="Register" style="height:60px;width:110px;font-size: 18px;margin-left: 150px;margin-bottom: 0px;"">
+            <div class="submission">
+                <p>Already a Member? <a href="/customerlogin">Customer Login</a></p>
+                <p>or Login as admin? <a href="/adminlogin/">Admin Login</a></p>
+            </div>
+        </form>
+    </div>
+
+    <script type="text/javascript">
+        var msgvalue = "{{ msg }}";
+        if (msgvalue != "") {
+            alert(msgvalue);
+        }
+    </script>
+
+</body>
+
+</html>

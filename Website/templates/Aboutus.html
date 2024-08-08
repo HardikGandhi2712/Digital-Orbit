@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #111;
+            color: #fff;
+            overflow-x: hidden;
+            background-color: black;
+            font-family: poppins;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .navbar {
+            border-radius: 80px;
+            padding: 10px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .navbar ul {
+            text-align: right;
+            color: white;
+            text-decoration: none;
+            list-style: none;
+            margin: 20px;
+        }
+
+        .navbar li {
+            margin: 20px;
+            display: inline;
+        }
+
+        .navbar li a:hover {
+            color: aqua;
+            border-bottom: red solid 4px;
+        }
+
+        .navbar li a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+
+        }
+
+        .logo {
+            height: 350px;
+            width: 450px;
+            margin-left: -150px;
+            margin-top:-70px;
+        }
+
+        .content {
+            background-color: #222;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+            margin-top: 110px;
+        }
+
+        .about {
+            font-size: 20px;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 30px;
+        }
+
+        .heading {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .heading h1 {
+            color: #fff;
+            font-size: 36px;
+            margin: 0;
+        }
+
+        .team {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .team-member {
+            width: 300px;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 10px auto;
+            border: 4px solid #fff;
+        }
+
+        .team-member h2 {
+            font-size: 24px;
+            margin: 10px 0;
+            color: #fff;
+        }
+
+        .team-member p {
+            font-size: 18px;
+            margin: 0;
+            color: #aaa;
+        }
+
+        p{
+            font-size:18px;
+            color:white;
+        }
+
+        .footer{
+            background: #265ede;
+            padding: 20px;
+            margin-top: 80px;
+            text-align: center;
+            color:#fff;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-top: 20px;
+            color: #ccc;
+        }
+
+        .contact-info p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .contact-info p strong {
+            color: #fff; /* Adjust color as needed */
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+        <img src="/static/3logo.png" class="logo" alt="Logo" align="left">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/#products">Products</a></li>
+            <li><a href="/customerlogin">Login</a></li>
+            <li><a href="/customer_register">Register</a></li>
+            <li><a href="/Aboutus">About Us</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="content">
+    <div class="heading">
+        <h1>About Us</h1>
+    </div>
+
+    <p class="about">This website is made by students of BCA 3rd Year - Hardik Gandhi, Diya Jain, Dhruv Dadheech, and Gautam Bhalerao as a college project under the guidance of our mentor Mr. Shrikant Mapari</p>
+
+    <h2 style="text-align: center; font-size: 30px;">Our Team</h2>
+
+    <div class="team">
+        <div class="team-member">
+            <img src="/static/Hardik1.png" alt="Hardik Gandhi">
+            <h2>Hardik Gandhi</h2>
+            <p>A Hardworking and curious Web developer. Co-Founder Digital Orbit.</p>
+        </div>
+        <div class="team-member">
+            <img src="/static/Diya1.png" alt="Diya Jain">
+            <h2>Diya Jain</h2>
+            <p>Enthusiastic Co-Founder of Digital Orbit and a great graphic designer</p>
+        </div>
+        <div class="team-member">
+            <img src="/static/Dhruv2.png" alt="Dhruv Dadheech">
+            <h2>Dhruv Dadheech</h2>
+            <p>COO of Digital Orbit, responsible for overseas operations</p>
+        </div>
+        <div class="team-member">
+            <img src="/static/Gautam1.png" alt="Gautam Bhalerao">
+            <h2>Gautam Bhalerao</h2>
+            <p>CFO of Digital Orbit, responsible for all financial portfolios</p>
+        </div>
+    </div>
+
+    <h2 style="text-align: center; font-size: 30px;">Contact Us</h2>
+    <div class="contact-info">
+        <p><strong>Email:</strong> digitalorbit@gmail.com</p>
+        <p><strong>Contact No:</strong> 9123892140</p>
+        <p><strong>Address:</strong> LD-102 Manoj Industries Ashok vihar, New Delhi, India</p>
+    </div>
+</div>
+<footer class="footer">
+    &copy; 2024. Digital Orbit. All rights reserved.
+</footer>
+
+</body>
+</html>

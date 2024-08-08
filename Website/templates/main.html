@@ -1,0 +1,227 @@
+<html>
+<head>
+    <title>All Tech Spec</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #111;
+            color: #fff;
+            overflow-x: hidden;
+            background-color: black;
+            background-image: url("/static/cover3.jpg");
+            background-repeat: no-repeat;
+            background-size:contain;
+            font-family: poppins;
+
+        }
+
+        header {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .navbar {
+            border-radius: 80px;
+            padding: 10px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .navbar ul {
+            text-align: right;
+            color: white;
+            text-decoration: none;
+            list-style: none;
+            margin: 20px;
+        }
+
+        .navbar li {
+            margin: 20px;
+            display: inline;
+        }
+
+        .navbar li a:hover {
+            color: aqua;
+            border-bottom: red solid 4px;
+        }
+
+        .navbar li a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+
+        }
+
+        .logo {
+            height: 300px;
+            width: 400px;
+            margin-left: -110px;
+            margin-top:-40px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 36px;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .tables {
+            margin: 0 auto;
+            text-align: center;
+            overflow-x: auto;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #000;
+        }
+
+        th, td {
+            padding: 20px;
+            border-bottom: 1px solid #444;
+            text-align: center;
+        }
+
+        th {
+            background-color: #222;
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        td {
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #265ede;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top:10px;
+        }
+
+        button:hover {
+            background-color: #1e4eb7;
+        }
+
+        .footer{
+            background: #265ede;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+            color:#fff;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 10px;
+            margin-bottom: 100px;
+        }
+
+        .box {
+            width: 300px;
+            margin: 20px;
+            padding: 20px;
+            background-color: #222;
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .box:hover {
+            transform: translateY(-10px);
+        }
+
+        .box h3 {
+            color: #fff;
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .box p {
+            font-size: 16px;
+            color: #aaa;
+        }
+
+        #products{
+            margin-top: 950px;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <img src="/static/3logo.png" class="logo" alt="Logo" align="left">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="/customerlogin">Login</a></li>
+            <li><a href="/customer_register">Register</a></li>
+            <li><a href="/Aboutus">About Us</a></li>
+        </ul>
+    </nav>
+</header>
+
+<h2 id="products">Sneak Peaks</h2><br>
+<div class="tables">
+    <table border="1">
+        <tr>
+            <th>Mobiles</th>
+            <th>Laptops</th>
+            <th>Televisions</th>
+        </tr>
+        <tr>
+            <td>{{rec_m.0}}</td>
+            <td>{{rec_l.0}}</td>
+            <td>{{rec_t.0}}</td>
+        </tr>
+        <tr>
+            <td><img src="/image/{{rec_m.1}}" height="200" width="100"></td>
+            <td><img src="/image/{{rec_l.1}}" height="200" width="200"></td>
+            <td><img src="/image/{{rec_t.1}}" height="200" width="250"></td>
+        </tr>
+        <tr>
+            <td>{{rec_m.2}} <br><button><a href="/customerlogin" style="text-decoration:none;color:white;">View More</a></button></td>
+            <td>{{rec_l.2}} <br><button><a href="/customerlogin" style="text-decoration:none;color:white;">View More</a></button></td>
+            <td>{{rec_t.2}} <br><button><a href="/customerlogin" style="text-decoration:none;color:white;">View More</a></button></td>
+        </tr>
+    </table>
+</div>
+<br><br><br><br>
+
+<h2 class="headings">Customer Feedback</h2>
+<div class="container">
+    {% for f in rec_f %}
+    <div class="box">
+        <h3>{{ f.0 }}</h3>
+        <p>{{ f.1 }}</p>
+    </div>
+    {% endfor %}
+</div>
+
+<footer class="footer">
+    &copy; 2024. Digital Orbit. All rights reserved.
+</footer>
+
+</body>
+</html>
